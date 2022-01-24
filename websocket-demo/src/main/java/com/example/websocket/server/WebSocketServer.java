@@ -13,8 +13,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 2022-01-08
  * @describe com.example.demo.server
  */
-@ServerEndpoint(value = "/websocket/{sid}")
-@Component
+//@ServerEndpoint(value = "/websocket/{sid}")
+//@Component
 public class WebSocketServer {
 
     /**
