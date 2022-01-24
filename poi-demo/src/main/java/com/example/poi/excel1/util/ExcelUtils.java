@@ -252,19 +252,19 @@ public class ExcelUtils {
                 CellStyle cellStyle = wb.createCellStyle();
                 cellStyle.setFillForegroundColor(IndexedColors.WHITE.getIndex());
                 // 3.13
-//                cellStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
-//                cellStyle.setAlignment(CellStyle.ALIGN_CENTER);
+                cellStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+                cellStyle.setAlignment(CellStyle.ALIGN_CENTER);
                 // 3.17
-                cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-                cellStyle.setAlignment(HorizontalAlignment.CENTER);
+//                cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+//                cellStyle.setAlignment(HorizontalAlignment.CENTER);
 
                 // 3.13
-//                Font font = wb.createFont();
-//                font.setBoldweight(Font.BOLDWEIGHT_NORMAL);
-                // 3.17
                 Font font = wb.createFont();
-                font.setBold(true);
-                font.setColor(IndexedColors.BLACK.getIndex());
+                font.setBoldweight(Font.BOLDWEIGHT_NORMAL);
+                // 3.17
+//                Font font = wb.createFont();
+//                font.setBold(true);
+//                font.setColor(IndexedColors.BLACK.getIndex());
 
                 cellStyle.setFont(font);
 

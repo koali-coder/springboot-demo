@@ -372,15 +372,15 @@ public class ExcelUtil<T>
         // 写入各条记录,每条记录对应excel表中的一行
         Map<String, CellStyle> styles = new HashMap<String, CellStyle>();
         CellStyle style = wb.createCellStyle();
-        style.setAlignment(HorizontalAlignment.CENTER);
-        style.setVerticalAlignment(VerticalAlignment.CENTER);
-        style.setBorderRight(BorderStyle.THIN);
+//        style.setAlignment(HorizontalAlignment.CENTER);
+//        style.setVerticalAlignment(VerticalAlignment.CENTER);
+//        style.setBorderRight(BorderStyle.THIN);
         style.setRightBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
-        style.setBorderLeft(BorderStyle.THIN);
+//        style.setBorderLeft(BorderStyle.THIN);
         style.setLeftBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
-        style.setBorderTop(BorderStyle.THIN);
+//        style.setBorderTop(BorderStyle.THIN);
         style.setTopBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
-        style.setBorderBottom(BorderStyle.THIN);
+//        style.setBorderBottom(BorderStyle.THIN);
         style.setBottomBorderColor(IndexedColors.GREY_50_PERCENT.getIndex());
         Font dataFont = wb.createFont();
         dataFont.setFontName("Arial");
@@ -390,10 +390,10 @@ public class ExcelUtil<T>
 
         style = wb.createCellStyle();
         style.cloneStyleFrom(styles.get("data"));
-        style.setAlignment(HorizontalAlignment.CENTER);
-        style.setVerticalAlignment(VerticalAlignment.CENTER);
+//        style.setAlignment(HorizontalAlignment.CENTER);
+//        style.setVerticalAlignment(VerticalAlignment.CENTER);
         style.setFillForegroundColor(IndexedColors.GREY_50_PERCENT.getIndex());
-        style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+//        style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         Font headerFont = wb.createFont();
         headerFont.setFontName("Arial");
         headerFont.setFontHeightInPoints((short) 10);
@@ -430,12 +430,12 @@ public class ExcelUtil<T>
     {
         if (ColumnType.STRING == attr.cellType())
         {
-            cell.setCellType(CellType.NUMERIC);
+            cell.setCellType(Cell.CELL_TYPE_NUMERIC);
             cell.setCellValue(value == null ? attr.defaultValue() : value + attr.suffix());
         }
         else if (ColumnType.NUMERIC == attr.cellType())
         {
-            cell.setCellType(CellType.NUMERIC);
+            cell.setCellType(Cell.CELL_TYPE_NUMERIC);
             cell.setCellValue(Integer.parseInt(value + ""));
         }
     }
@@ -776,7 +776,7 @@ public class ExcelUtil<T>
             Cell cell = row.getCell(column);
             if (cell != null)
             {
-                if (cell.getCellTypeEnum() == CellType.NUMERIC || cell.getCellTypeEnum() == CellType.FORMULA)
+                if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC || cell.getCellType() == Cell.CELL_TYPE_FORMULA)
                 {
                     val = cell.getNumericCellValue();
                     if (HSSFDateUtil.isCellDateFormatted(cell))
@@ -795,15 +795,15 @@ public class ExcelUtil<T>
                         }
                     }
                 }
-                else if (cell.getCellTypeEnum() == CellType.STRING)
+                else if (cell.getCellType() == Cell.CELL_TYPE_STRING)
                 {
                     val = cell.getStringCellValue();
                 }
-                else if (cell.getCellTypeEnum() == CellType.BOOLEAN)
+                else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN)
                 {
                     val = cell.getBooleanCellValue();
                 }
-                else if (cell.getCellTypeEnum() == CellType.ERROR)
+                else if (cell.getCellType() == Cell.CELL_TYPE_ERROR)
                 {
                     val = cell.getErrorCellValue();
                 }
