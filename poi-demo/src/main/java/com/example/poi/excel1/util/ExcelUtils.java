@@ -252,7 +252,7 @@ public class ExcelUtils {
                 CellStyle cellStyle = wb.createCellStyle();
                 cellStyle.setFillForegroundColor(IndexedColors.WHITE.getIndex());
                 // 3.13
-                cellStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+//                cellStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
                 cellStyle.setAlignment(CellStyle.ALIGN_CENTER);
                 // 3.17
 //                cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
@@ -260,7 +260,7 @@ public class ExcelUtils {
 
                 // 3.13
                 Font font = wb.createFont();
-                font.setBoldweight(Font.BOLDWEIGHT_NORMAL);
+                font.setBoldweight(Font.BOLDWEIGHT_BOLD);
                 // 3.17
 //                Font font = wb.createFont();
 //                font.setBold(true);
