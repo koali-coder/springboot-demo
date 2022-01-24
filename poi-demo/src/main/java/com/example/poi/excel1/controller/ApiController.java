@@ -21,7 +21,7 @@ public class ApiController {
     @GetMapping("/export")
     public void export(HttpServletResponse response) {
         List<Record> data = new ArrayList<>();
-        ExcelUtils.writeExcel("登录日志", response, data, Record.class);
+        ExcelUtils.writeExcel("excel", response, data, Record.class);
     }
 
 }
